@@ -1,0 +1,12 @@
+<div class="column">
+  <h1 class="mat-display-1 header" matTooltip="{{ question.answer | lowercase }}" matTooltipPosition="above">{{ question.word | lowercase }}</h1>
+  <button
+    mat-raised-button
+    *ngFor="let option of question.options"
+    [color]="isRightAnswer(option)"
+    [disabled]="isDisabled(option)"
+    (click)="sendAnswer(option)"
+  >
+    {{ option | lowercase }}
+  </button>
+</div>

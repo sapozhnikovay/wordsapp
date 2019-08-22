@@ -1,0 +1,16 @@
+<!-- <div class="flex-container">
+  <div class="row">
+    <a mat-raised-button *ngFor="let set of wordSets" [routerLink]="['test', set.id]">{{ set.name }}</a>
+  </div>
+</div> -->
+
+<!-- (click)="editWordset(set)" -->
+
+<mat-nav-list>
+  <mat-list-item *ngFor="let set of wordSets">
+    <a mat-list-item [routerLink]="['test', set.id]"> {{ set.name }} </a>
+    <button mat-icon-button  [routerLink]="['edit', set.id]" ><mat-icon>edit</mat-icon></button>
+  </mat-list-item>
+</mat-nav-list>
+
+<button mat-fab class="fab-button" (click)="addWordset()"><mat-icon>add</mat-icon></button>

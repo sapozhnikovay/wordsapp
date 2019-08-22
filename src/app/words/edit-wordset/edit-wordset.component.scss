@@ -1,0 +1,10 @@
+.wordLine {
+  display: flex !important;
+  justify-content: space-between;
+  align-items: center;
+  > div:first-child {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    flex: 1 0 0;
+  }
+}

@@ -1,0 +1,13 @@
+<h1 mat-dialog-title>{{ data.create ? 'Add new Word' : 'Edit Word' }}</h1>
+<div mat-dialog-content>
+  <mat-form-field>
+    <input matInput cdkFocusInitial required [(ngModel)]="data.original" placeholder="Original" type="text" lang="de-DE" />
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput required [(ngModel)]="data.translation" placeholder="Translation" type="text" lang="ru-RU"/>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="close()">CANCEL</button>
+  <button mat-button [mat-dialog-close]="data" color="primary">{{ data.create ? 'CREATE' : 'EDIT' }}</button>
+</div>

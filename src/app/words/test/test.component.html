@@ -1,0 +1,13 @@
+<div class="flex-container">
+  <div class="row">
+    <app-question *ngIf="showQuestions" [question]="currentQuestion" (answer)="checkAnswer($event)"></app-question>
+    <div *ngIf="showResults" class="column">
+      <h1 class="mat-display-1">Results:</h1>
+      <div>
+        <strong>{{ results }}</strong> of {{ total }}
+      </div>
+      <button mat-raised-button color="primary" (click)="loadQuestions()">Restart</button>
+      <a mat-raised-button color="primary" [routerLink]="['/']">Select another set</a>
+    </div>
+  </div>
+</div>

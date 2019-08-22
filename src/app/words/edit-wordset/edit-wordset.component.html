@@ -1,0 +1,15 @@
+<mat-list>
+  <mat-list-item *ngFor="let word of words">
+    <div matLine class="wordLine">
+      <div>
+        <strong>{{ word.original }}</strong> - {{ word.translation }}
+      </div>
+      <div>
+        <button mat-icon-button (click)="editWord(word)"><mat-icon>edit</mat-icon></button>
+        <button mat-icon-button (click)="deleteWord(word)"><mat-icon>delete</mat-icon></button>
+      </div>
+    </div>
+  </mat-list-item>
+</mat-list>
+
+<button mat-fab class="fab-button" (click)="addWord()"><mat-icon>add</mat-icon></button>
