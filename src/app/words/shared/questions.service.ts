@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Question } from './question.model';
+import { Question, QuestionType } from './question.model';
 import * as mock from './words.mock';
 import * as wordsetMock from './wordset.mock';
 import { WordSet } from './wordset.model';
@@ -21,7 +21,11 @@ export class QuestionsService {
   getQuestions(wordSet: string): Observable<Question[]> {
     return this.wordsService.getWords(wordSet).pipe(
       map(db => {
-        const result: Question[] = [].concat(this._getDirectQuestions(db).slice(0, 10)).concat(this._getReverseQuestions(db).slice(0, 10));
+        const result: Question[] = []
+          .concat(this._getDirectQuestions(db).slice(0, 10))
+          .concat(this._getReverseQuestions(db).slice(0, 5))
+          .concat(this._getInputQuestions(db, true).slice(0, 3))
+          .concat(this._getInputQuestions(db).slice(0, 2));
         this._shuffle(result);
         return result;
       })
@@ -40,6 +44,7 @@ export class QuestionsService {
       }
       this._shuffle(options);
       return {
+        type: QuestionType.Options,
         word: word.original,
         answer: word.translation,
         options
@@ -60,11 +65,30 @@ export class QuestionsService {
       }
       this._shuffle(options);
       return {
+        type: QuestionType.Options,
         word: word.translation,
         answer: word.original,
         options
       } as Question;
     });
+    return result;
+  }
+
+  private _getInputQuestions(words: Word[], isReverse = false): Question[] {
+    const result = words.map(word => {
+      return isReverse
+        ? ({
+            type: QuestionType.Input,
+            word: word.translation,
+            answer: word.original
+          } as Question)
+        : ({
+            type: QuestionType.Input,
+            word: word.original,
+            answer: word.translation
+          } as Question);
+    });
+    this._shuffle(result);
     return result;
   }
 

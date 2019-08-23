@@ -1,5 +1,7 @@
-<div class="column">
-  <h1 class="mat-display-1 header" matTooltip="{{ question.answer | lowercase }}" matTooltipPosition="above">{{ question.word | lowercase }}</h1>
+<div class="column" *ngIf="question.type === 1">
+  <h1 class="mat-display-1 header" matTooltip="{{ question.answer | lowercase }}" matTooltipPosition="above">
+    {{ question.word | lowercase }}
+  </h1>
   <button
     mat-raised-button
     *ngFor="let option of question.options"
@@ -8,5 +10,18 @@
     (click)="sendAnswer(option)"
   >
     {{ option | lowercase }}
+  </button>
+</div>
+
+<div class="column" *ngIf="question.type === 2">
+  <h1 class="mat-display-1 header" matTooltip="{{ question.answer | lowercase }}" matTooltipPosition="above">
+    {{ question.word | lowercase }}
+  </h1>
+  <mat-form-field [color]="getInputFieldColor()">
+    <input matInput autofocus [(ngModel)]="inputAnswer" placeholder="Answer" type="text" />
+    <mat-hint *ngIf="gotAnswer && !result" class="errorHint">{{ question.answer | lowercase }}</mat-hint>
+  </mat-form-field>
+  <button mat-raised-button color="primary" [disabled]="gotAnswer || !inputAnswer" (click)="checkInputAnswer(inputAnswer)">
+    Send
   </button>
 </div>

@@ -11,12 +11,15 @@ export class QuestionComponent implements OnInit, OnChanges {
   @Input() question: Question;
   @Output() answer = new EventEmitter<boolean>();
   public gotAnswer = false;
+  public result: boolean;
+  public inputAnswer = '';
   private selected = '';
   constructor() {}
 
   ngOnInit() {}
 
   ngOnChanges() {
+    this.inputAnswer = '';
     this.gotAnswer = false;
   }
 
@@ -29,6 +32,14 @@ export class QuestionComponent implements OnInit, OnChanges {
         result = true;
       }
       this.answer.emit(result);
+    }
+  }
+
+  checkInputAnswer(answer: string) {
+    if (!this.gotAnswer) {
+      this.result = this.question.answer.toLowerCase().includes(answer.toLowerCase());
+      this.gotAnswer = true;
+      this.answer.emit(this.result);
     }
   }
 
@@ -46,5 +57,14 @@ export class QuestionComponent implements OnInit, OnChanges {
 
   isDisabled(option: string) {
     return option !== this.selected && option !== this.question.answer && this.gotAnswer;
+  }
+
+  getInputFieldColor() {
+    if (this.gotAnswer && this.result) {
+      return 'primary';
+    }
+    if (this.gotAnswer && !this.result) {
+      return 'warn';
+    }
   }
 }

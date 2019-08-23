@@ -29,7 +29,6 @@ body {
 }
 
 .flex-container {
-  height: 100%;
   padding: 0 16px;
   margin: 0;
   display: -webkit-box;
@@ -37,6 +36,7 @@ body {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
+  flex: auto;
   align-items: center;
   justify-content: center;
 }
