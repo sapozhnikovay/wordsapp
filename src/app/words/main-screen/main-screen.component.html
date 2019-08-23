@@ -1,7 +1,10 @@
 <mat-nav-list>
-  <mat-list-item *ngFor="let set of wordSets">
+  <mat-list-item *ngFor="let set of wordSets" (swipeleft)="hideActions = false" (swiperight)="hideActions = true">
     <a mat-list-item [routerLink]="['test', set.id]"> {{ set.name }} </a>
-    <button mat-icon-button [routerLink]="['edit', set.id]"><mat-icon>edit</mat-icon></button>
+    <div class="actions" [class.actions_hidden]="hideActions">
+      <button mat-icon-button [routerLink]="['edit', set.id]"><mat-icon>edit</mat-icon></button>
+      <button mat-icon-button><mat-icon>delete</mat-icon></button>
+    </div>
   </mat-list-item>
 </mat-nav-list>
 

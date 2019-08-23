@@ -13,6 +13,7 @@ import { WordsetDialogComponent } from '../wordset-dialog/wordset-dialog.compone
 })
 export class MainScreenComponent implements OnInit {
   public wordSets: WordSet[];
+  public hideActions = true;
 
   constructor(private questionsService: QuestionsService, private dataService: WordsetsService, private dialog: MatDialog) {}
 
