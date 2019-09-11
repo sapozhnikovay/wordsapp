@@ -1,0 +1,9 @@
+<mat-nav-list>
+  <mat-list-item *ngFor="let set of wordSets">
+    <a mat-list-item [routerLink]="['./', set.id]"> {{ set.name }} </a>
+    <div class="actions">
+      <button mat-icon-button *ngIf="!hasWordset(set)" (click)="copyWordset(set)"><mat-icon>playlist_add</mat-icon></button>
+      <mat-icon color="primary" *ngIf="hasWordset(set)">playlist_add_check</mat-icon>
+    </div>
+  </mat-list-item>
+</mat-nav-list>

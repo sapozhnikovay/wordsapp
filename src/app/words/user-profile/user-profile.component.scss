@@ -1,0 +1,24 @@
+.profile {
+  display: flex;
+  flex-direction: row;
+  .avatar {
+    margin: 16px;
+    img {
+      width: 64px;
+      height: 64px;
+      border-radius: 100%;
+    }
+  }
+  .usertext {
+    margin-top: 16px;
+  }
+}
+
+app-user-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  > *:not(:last-child) {
+    margin-bottom: 16px;
+  }
+}

@@ -2,6 +2,9 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { QuestionsService } from '../shared/questions.service';
 import { Question } from '../shared/question.model';
 import { ActivatedRoute } from '@angular/router';
+import { AuthService } from 'src/app/core/auth/auth.service';
+import { TitleService } from 'src/app/core/title/title.service';
+import { WordsetsService } from '../shared/wordsets.service';
 
 @Component({
   selector: 'app-test',
@@ -12,22 +15,35 @@ import { ActivatedRoute } from '@angular/router';
 export class TestComponent implements OnInit {
   public currentQuestion: Question;
   private questions: Question[] = [];
-  private index = 0;
+  public index = 0;
   public results = 0;
   public total = 0;
   public showResults = false;
   public showQuestions = false;
   private wordSet: string;
+  private userId: string;
 
-  constructor(private questionsService: QuestionsService, private activatedRoute: ActivatedRoute) {}
+  constructor(
+    private questionsService: QuestionsService,
+    private activatedRoute: ActivatedRoute,
+    private authService: AuthService,
+    private dataService: WordsetsService,
+    private titleService: TitleService
+  ) {}
 
   ngOnInit() {
     this.wordSet = this.activatedRoute.snapshot.paramMap.get('name');
-    this.loadQuestions();
+    this.authService.user$.subscribe(user => {
+      if (user) {
+        this.userId = user.uid;
+        this.dataService.getWordset(this.userId, this.wordSet).subscribe(set => this.titleService.setTitle(set.name));
+        this.loadQuestions();
+      }
+    });
   }
 
   loadQuestions(): void {
-    this.questionsService.getQuestions(this.wordSet).subscribe(result => {
+    this.questionsService.getQuestions(this.userId, this.wordSet).subscribe(result => {
       this.results = 0;
       this.index = 0;
       this.questions = result;

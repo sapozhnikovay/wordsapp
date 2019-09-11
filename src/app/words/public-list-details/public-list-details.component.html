@@ -1,0 +1,30 @@
+<!-- <mat-list>
+  <mat-list-item *ngFor="let word of words">
+    <div matLine class="wordLine">
+      <div>
+        <strong>{{ word.original }}</strong> - {{ word.translation }}
+      </div>
+    </div>
+  </mat-list-item>
+</mat-list> -->
+
+<div class="fullscreen">
+  <table mat-table [dataSource]="dataSource" matSort matSortActive="original" matSortDirection="asc" >
+    <!-- Position Column -->
+    <ng-container matColumnDef="original">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Original</th>
+      <td mat-cell *matCellDef="let element">
+        <strong> {{ element.original }} </strong>
+      </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="translation">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Translation</th>
+      <td mat-cell *matCellDef="let element">{{ element.translation }}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+</div>

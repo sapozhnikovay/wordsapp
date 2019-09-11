@@ -18,8 +18,8 @@ export class QuestionsService {
     return wordsetMock.default;
   }
 
-  getQuestions(wordSet: string): Observable<Question[]> {
-    return this.wordsService.getWords(wordSet).pipe(
+  getQuestions(userId: string, wordSet: string): Observable<Question[]> {
+    return this.wordsService.getWords(userId, wordSet).pipe(
       map(db => {
         const result: Question[] = []
           .concat(this._getDirectQuestions(db).slice(0, 10))

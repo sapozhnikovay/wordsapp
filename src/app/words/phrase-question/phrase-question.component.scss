@@ -1,0 +1,18 @@
+app-phrase-question {
+  flex-direction: column;
+  display: flex;
+  justify-content: stretch;
+  align-items: stretch;
+  flex: 1 1 0;
+  height: 100%;
+}
+
+
+.header {
+  margin-bottom: 64px !important;
+  text-align: center;
+}
+
+.errorHint {
+  color: maroon !important;
+}

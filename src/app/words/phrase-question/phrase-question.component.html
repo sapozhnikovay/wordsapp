@@ -1,0 +1,24 @@
+<div class="flex-container">
+  <div class="row">
+    <div>
+      <h1 class="mat-display-1 header">
+        {{ phrase.text }}
+      </h1>
+      <div>
+        <mat-chip-list>
+          <mat-chip *ngFor="let option of answerArray" [selectable]="false" (click)="returnChip(option)">{{ option }}</mat-chip>
+        </mat-chip-list>
+      </div>
+      <hr />
+      <div>
+        <mat-chip-list>
+          <mat-chip *ngFor="let option of phrase.options" [selectable]="false" (click)="moveChip(option)">{{ option }}</mat-chip>
+        </mat-chip-list>
+      </div>
+      <mat-hint *ngIf="gotAnswer && !result" class="errorHint">{{ phrase.answer | lowercase }}</mat-hint>
+      <button mat-raised-button color="primary" [disabled]="gotAnswer" (click)="checkInputAnswer(inputAnswer)">
+        Send
+      </button>
+    </div>
+  </div>
+</div>

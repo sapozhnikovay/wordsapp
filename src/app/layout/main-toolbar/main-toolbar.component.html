@@ -1,3 +1,5 @@
 <mat-toolbar color="primary">
   <button mat-icon-button *ngIf="showBackButton" (click)="goBack()"><mat-icon>arrow_back</mat-icon></button>
+  <h1 class="example-app-name">{{ title }}</h1>
+  <div #toolbarTarget style="flex: 1 1 0;"></div>
 </mat-toolbar>

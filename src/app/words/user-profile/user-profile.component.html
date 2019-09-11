@@ -1,0 +1,10 @@
+<div *ngIf="auth.user$ | async as user" class="profile">
+  <div class="avatar">
+    <img [src]="user.photoURL" *ngIf="user.photoURL" />
+  </div>
+  <div class="usertext">
+    <h2>{{ user.displayName }}</h2>
+    <h4>{{ user.email }}</h4>
+  </div>
+</div>
+<button mat-raised-button color="primary" (click)="auth.signOut()">LOGOUT</button>
