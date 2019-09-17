@@ -1,16 +1,17 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { MainToolbarComponent } from './main-toolbar.component';
+import { MainToolbarComponent } from "./main-toolbar.component";
+import { MaterialModule } from "src/app/shared/material/material.module";
 
-describe('MainToolbarComponent', () => {
+describe("MainToolbarComponent", () => {
   let component: MainToolbarComponent;
   let fixture: ComponentFixture<MainToolbarComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MainToolbarComponent ]
-    })
-    .compileComponents();
+      imports: [MaterialModule],
+      declarations: [MainToolbarComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,7 +20,7 @@ describe('MainToolbarComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { EditWordsetComponent } from './edit-wordset.component';
+import { MaterialModule } from 'src/app/shared/material/material.module';
+import { FormsModule } from '@angular/forms';
 
 describe('EditWordsetComponent', () => {
   let component: EditWordsetComponent;
@@ -8,6 +10,7 @@ describe('EditWordsetComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [MaterialModule, FormsModule],
       declarations: [ EditWordsetComponent ]
     })
     .compileComponents();

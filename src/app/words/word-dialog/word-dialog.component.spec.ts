@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { WordDialogComponent } from './word-dialog.component';
+import { MaterialModule } from 'src/app/shared/material/material.module';
+import { FormsModule } from '@angular/forms';
 
 describe('WordDialogComponent', () => {
   let component: WordDialogComponent;
@@ -8,6 +10,7 @@ describe('WordDialogComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [MaterialModule, FormsModule],
       declarations: [ WordDialogComponent ]
     })
     .compileComponents();

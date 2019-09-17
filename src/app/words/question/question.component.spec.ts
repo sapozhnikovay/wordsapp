@@ -1,25 +1,32 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { QuestionComponent } from './question.component';
+import { QuestionComponent } from "./question.component";
+import { MaterialModule } from "src/app/shared/material/material.module";
+import { FormsModule } from '@angular/forms';
 
-describe('QuestionComponent', () => {
+describe("QuestionComponent", () => {
   let component: QuestionComponent;
   let fixture: ComponentFixture<QuestionComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ QuestionComponent ]
-    })
-    .compileComponents();
+      imports: [MaterialModule, FormsModule],
+      declarations: [QuestionComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(QuestionComponent);
     component = fixture.componentInstance;
+    component.question = {
+      type: 1,
+      word: '',
+      answer: ''
+    }
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

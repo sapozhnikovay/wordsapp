@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PublicListDetailsComponent } from './public-list-details.component';
+import { MaterialModule } from 'src/app/shared/material/material.module';
 
 describe('PublicListDetailsComponent', () => {
   let component: PublicListDetailsComponent;
@@ -8,6 +9,7 @@ describe('PublicListDetailsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [MaterialModule],
       declarations: [ PublicListDetailsComponent ]
     })
     .compileComponents();

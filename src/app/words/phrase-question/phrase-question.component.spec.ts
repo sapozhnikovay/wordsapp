@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PhraseQuestionComponent } from './phrase-question.component';
+import { MatChipsModule, MatButtonModule, MatFormFieldModule } from '@angular/material';
 
 describe('PhraseQuestionComponent', () => {
   let component: PhraseQuestionComponent;
@@ -8,7 +9,8 @@ describe('PhraseQuestionComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PhraseQuestionComponent ]
+      declarations: [ PhraseQuestionComponent ],
+      imports: [MatChipsModule, MatButtonModule, MatFormFieldModule]
     })
     .compileComponents();
   }));
