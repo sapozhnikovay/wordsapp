@@ -2,32 +2,28 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { WordsModule } from './words/words.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { SharedModule } from './shared/shared.module';
-import { WordsRoutingModule } from './words/words-routing.module';
-import { AngularFireModule } from '@angular/fire';
-import { AngularFirestoreModule } from '@angular/fire/firestore';
-import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from '../environments/environment';
 import { LayoutModule } from './layout/layout.module';
-import { CoreModule } from './core/core.module';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { AccountModule } from './account/account.module';
+import { ProfileModule } from './profile/profile.module';
+import { TestModule } from './test/test.module';
+import { MainModule } from './main/main.module';
+import { FirebaseModule } from './core/firebase';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule,
-    AngularFireAuthModule,
+    FirebaseModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    SharedModule,
     LayoutModule,
-    WordsModule,
-    WordsRoutingModule,
-    CoreModule,
+    AccountModule,
+    ProfileModule,
+    TestModule,
+    MainModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],

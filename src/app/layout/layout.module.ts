@@ -1,12 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LoginLayoutComponent } from './login-layout/login-layout.component';
 import { MainLayoutComponent } from './main-layout/main-layout.component';
-import { SharedModule } from '../shared/shared.module';
 import { MainToolbarComponent } from './main-toolbar/main-toolbar.component';
+import { UIModule } from '@app/ui/ui.module';
 
 @NgModule({
-  declarations: [LoginLayoutComponent, MainLayoutComponent, MainToolbarComponent],
-  imports: [CommonModule, SharedModule],
+  declarations: [MainLayoutComponent, MainToolbarComponent],
+  imports: [CommonModule, UIModule],
 })
 export class LayoutModule {}

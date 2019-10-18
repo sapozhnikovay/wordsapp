@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
 import { MainToolbarComponent } from "./main-toolbar.component";
-import { MaterialModule } from "src/app/shared/material/material.module";
+import { MaterialModule } from "@app/ui/material/material.module";
 
 describe("MainToolbarComponent", () => {
   let component: MainToolbarComponent;
