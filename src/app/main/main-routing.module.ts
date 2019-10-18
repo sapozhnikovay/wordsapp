@@ -38,7 +38,7 @@ const MAIN_ROUTES = [
       }
     ]
   }
-]
+];
 
 @NgModule({
   imports: [RouterModule.forChild(MAIN_ROUTES)],

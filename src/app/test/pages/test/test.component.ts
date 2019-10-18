@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { QuestionsService } from '../../shared/questions.service';
 import { Question } from '../../shared/question.model';
 import { ActivatedRoute } from '@angular/router';
@@ -9,8 +9,7 @@ import { WordsetsService } from '../../shared/wordsets.service';
 @Component({
   selector: 'app-test',
   templateUrl: './test.component.html',
-  styleUrls: ['./test.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  styleUrls: ['./test.component.scss']
 })
 export class TestComponent implements OnInit {
   public currentQuestion: Question;

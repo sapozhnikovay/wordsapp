@@ -9,10 +9,9 @@ describe('PhraseQuestionComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PhraseQuestionComponent ],
+      declarations: [PhraseQuestionComponent],
       imports: [MatChipsModule, MatButtonModule, MatFormFieldModule]
-    })
-    .compileComponents();
+    }).compileComponents();
   }));
 
   beforeEach(() => {

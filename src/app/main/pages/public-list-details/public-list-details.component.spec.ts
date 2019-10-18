@@ -10,9 +10,8 @@ describe('PublicListDetailsComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [MaterialModule],
-      declarations: [ PublicListDetailsComponent ]
-    })
-    .compileComponents();
+      declarations: [PublicListDetailsComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

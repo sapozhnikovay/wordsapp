@@ -11,9 +11,8 @@ describe('WordDialogComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [MaterialModule, FormsModule],
-      declarations: [ WordDialogComponent ]
-    })
-    .compileComponents();
+      declarations: [WordDialogComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

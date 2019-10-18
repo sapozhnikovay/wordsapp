@@ -34,7 +34,7 @@ export class MainToolbarComponent implements OnInit, OnDestroy {
     private location: Location,
     public titleService: TitleService
   ) {
-    this.titleService.title$.subscribe(data => this.title = data);
+    this.titleService.title$.subscribe(data => (this.title = data));
     this.routerEventSubscription = this.router.events
       .pipe(
         filter(event => event instanceof NavigationEnd),

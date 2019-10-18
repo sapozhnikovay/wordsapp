@@ -13,13 +13,9 @@ describe('WordsetDialogComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [MaterialModule, FormsModule, NoopAnimationsModule],
-      declarations: [ WordsetDialogComponent ],
-      providers: [
-        { provide: MatDialogRef, useValue: {} },
-        { provide: MAT_DIALOG_DATA, useValue: [] }
-      ]
-    })
-    .compileComponents();
+      declarations: [WordsetDialogComponent],
+      providers: [{ provide: MatDialogRef, useValue: {} }, { provide: MAT_DIALOG_DATA, useValue: [] }]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

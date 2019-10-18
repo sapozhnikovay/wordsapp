@@ -6,6 +6,6 @@ import { UIModule } from '@app/ui/ui.module';
 
 @NgModule({
   declarations: [MainLayoutComponent, MainToolbarComponent],
-  imports: [CommonModule, UIModule],
+  imports: [CommonModule, UIModule]
 })
 export class LayoutModule {}

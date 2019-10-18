@@ -1,11 +1,10 @@
-import { Component, OnInit, Input, Output, EventEmitter, OnChanges, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, OnChanges } from '@angular/core';
 import { Question } from '../../shared/question.model';
 
 @Component({
   selector: 'app-question',
   templateUrl: './question.component.html',
-  styleUrls: ['./question.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  styleUrls: ['./question.component.scss']
 })
 export class QuestionComponent implements OnInit, OnChanges {
   @Input() question: Question;

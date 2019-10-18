@@ -36,7 +36,10 @@ describe('PublicListComponent', () => {
     TestBed.configureTestingModule({
       imports: [MaterialModule, RouterTestingModule],
       declarations: [PublicListComponent],
-      providers: [{ provide: AngularFireAuth, useValue: angularFireAuthStub }, { provide: AngularFirestore, useValue: angularFirestoreStub }]
+      providers: [
+        { provide: AngularFireAuth, useValue: angularFireAuthStub },
+        { provide: AngularFirestore, useValue: angularFirestoreStub }
+      ]
     }).compileComponents();
   }));
 

@@ -11,9 +11,8 @@ describe('MainScreenComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [MaterialModule, RouterTestingModule],
-      declarations: [ MainScreenComponent ]
-    })
-    .compileComponents();
+      declarations: [MainScreenComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

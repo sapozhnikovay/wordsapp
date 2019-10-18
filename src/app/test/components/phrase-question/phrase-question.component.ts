@@ -1,11 +1,10 @@
-import { Component, OnInit, Input, Output, EventEmitter, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Phrase } from '../../shared/phrase.model';
 
 @Component({
   selector: 'app-phrase-question',
   templateUrl: './phrase-question.component.html',
-  styleUrls: ['./phrase-question.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  styleUrls: ['./phrase-question.component.scss']
 })
 export class PhraseQuestionComponent implements OnInit {
   @Input() phrase: Phrase;
@@ -13,7 +12,6 @@ export class PhraseQuestionComponent implements OnInit {
   public gotAnswer = false;
   public result: boolean;
   public inputAnswer = '';
-  private selected = '';
   public answerArray: string[] = [];
 
   constructor() {}
@@ -26,7 +24,7 @@ export class PhraseQuestionComponent implements OnInit {
     };
   }
 
-  checkInputAnswer(answer: string) {
+  checkInputAnswer() {
     if (!this.gotAnswer) {
       this.result = this.phrase.answer === this.answerArray.join(' ');
       this.gotAnswer = true;

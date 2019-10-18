@@ -13,20 +13,19 @@ describe('LoginComponent', () => {
 
   let angularFireAuthStub: Partial<AngularFireAuth>;
   angularFireAuthStub = {
-    authState:  new Observable<User>()
+    authState: new Observable<User>()
   };
-  let angularFirestoreStub: Partial<AngularFirestore>;
+  const angularFirestoreStub: Partial<AngularFirestore> = {};
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LoginComponent ],
+      declarations: [LoginComponent],
       imports: [RouterTestingModule],
       providers: [
         { provide: AngularFireAuth, useValue: angularFireAuthStub },
         { provide: AngularFirestore, useValue: angularFirestoreStub }
       ]
-    })
-    .compileComponents();
+    }).compileComponents();
   }));
 
   beforeEach(() => {

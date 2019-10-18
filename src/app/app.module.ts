@@ -31,12 +31,13 @@ import { TranslocoModule, TRANSLOCO_CONFIG, TranslocoConfig } from '@ngneat/tran
     HttpClientModule,
     TranslocoModule
   ],
-  providers: [{
+  providers: [
+    {
       provide: TRANSLOCO_CONFIG,
       useValue: {
         availableLangs: ['en', 'ru'],
         defaultLang: 'en',
-        prodMode: environment.production,
+        prodMode: environment.production
       } as TranslocoConfig
     },
     translocoLoader

@@ -1,10 +1,10 @@
-<h1 mat-dialog-title>{{ data.create ? 'Add new Wordset' : 'Edit Wordset'}}</h1>
+<h1 mat-dialog-title>{{ data.create ? 'Add new Wordset' : 'Edit Wordset' }}</h1>
 <div mat-dialog-content>
   <mat-form-field>
-    <input matInput cdkFocusInitial [(ngModel)]="data.name" placeholder="Name">
+    <input matInput cdkFocusInitial [(ngModel)]="data.name" placeholder="Name" />
   </mat-form-field>
 </div>
 <div mat-dialog-actions>
   <button mat-button (click)="close()">CANCEL</button>
-  <button mat-button [mat-dialog-close]="data.name" color="primary">{{data.create ? 'CREATE' : 'EDIT'}}</button>
+  <button mat-button [mat-dialog-close]="data.name" color="primary">{{ data.create ? 'CREATE' : 'EDIT' }}</button>
 </div>

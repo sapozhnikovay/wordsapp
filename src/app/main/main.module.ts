@@ -13,7 +13,15 @@ import { AngularFireAuthGuard } from '@angular/fire/auth-guard';
 @NgModule({
   imports: [MainRoutingModule, UIModule],
   exports: [MainRoutingModule],
-  declarations: [MainScreenComponent, WordsetDialogComponent, WordDialogComponent, EditWordsetComponent, MainScreenToolbarComponent, PublicListComponent, PublicListDetailsComponent],
+  declarations: [
+    MainScreenComponent,
+    WordsetDialogComponent,
+    WordDialogComponent,
+    EditWordsetComponent,
+    MainScreenToolbarComponent,
+    PublicListComponent,
+    PublicListDetailsComponent
+  ],
   providers: [AngularFireAuthGuard],
   entryComponents: [WordsetDialogComponent, WordDialogComponent, MainScreenToolbarComponent]
 })

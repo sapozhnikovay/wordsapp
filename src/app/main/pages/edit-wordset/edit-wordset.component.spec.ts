@@ -11,9 +11,8 @@ describe('EditWordsetComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [MaterialModule, FormsModule],
-      declarations: [ EditWordsetComponent ]
-    })
-    .compileComponents();
+      declarations: [EditWordsetComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

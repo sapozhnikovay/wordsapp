@@ -10,9 +10,8 @@ describe('UserProfileComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [MaterialModule],
-      declarations: [ UserProfileComponent ]
-    })
-    .compileComponents();
+      declarations: [UserProfileComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

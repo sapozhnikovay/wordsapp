@@ -1,4 +1,4 @@
-app-phrase-question {
+:host {
   flex-direction: column;
   display: flex;
   justify-content: stretch;
@@ -6,7 +6,6 @@ app-phrase-question {
   flex: 1 1 0;
   height: 100%;
 }
-
 
 .header {
   margin-bottom: 64px !important;

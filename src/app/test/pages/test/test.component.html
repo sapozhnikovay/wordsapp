@@ -1,4 +1,4 @@
-<mat-progress-bar mode="determinate" [value]="index / total * 100" color="accent"></mat-progress-bar>
+<mat-progress-bar mode="determinate" [value]="(index / total) * 100" color="accent"></mat-progress-bar>
 <div class="flex-container">
   <div class="row">
     <app-question *ngIf="showQuestions" [question]="currentQuestion" (answer)="checkAnswer($event)"></app-question>

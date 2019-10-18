@@ -11,10 +11,9 @@ describe('MainLayoutComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MainLayoutComponent, MainToolbarComponent ],
-      imports: [RouterTestingModule, MatSidenavModule],
-    })
-    .compileComponents();
+      declarations: [MainLayoutComponent, MainToolbarComponent],
+      imports: [RouterTestingModule, MatSidenavModule]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

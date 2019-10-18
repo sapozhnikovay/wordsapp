@@ -8,9 +8,8 @@ describe('MainScreenToolbarComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MainScreenToolbarComponent ]
-    })
-    .compileComponents();
+      declarations: [MainScreenToolbarComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {

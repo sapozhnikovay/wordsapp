@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { WordSet } from '../../../test/shared/wordset.model';
 import { WordsetsService } from '../../../test/shared/wordsets.service';
 import { MatDialog } from '@angular/material';
@@ -9,8 +9,7 @@ import { TitleService } from 'src/app/core/title/title.service';
 @Component({
   selector: 'app-main-screen',
   templateUrl: './main-screen.component.html',
-  styleUrls: ['./main-screen.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  styleUrls: ['./main-screen.component.scss']
 })
 export class MainScreenComponent implements OnInit {
   public wordSets: WordSet[] = [];

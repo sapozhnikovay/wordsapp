@@ -8,7 +8,7 @@ export class TitleService {
   private title: Subject<string> = new Subject<string>();
   public title$: Observable<string> = this.title.asObservable();
 
-  constructor() { }
+  constructor() {}
 
   setTitle(value: string) {
     this.title.next(value);
