@@ -11,6 +11,9 @@ import { ProfileModule } from './profile/profile.module';
 import { TestModule } from './test/test.module';
 import { MainModule } from './main/main.module';
 import { FirebaseModule } from './core/firebase';
+import { HttpClientModule } from '@angular/common/http';
+import { translocoLoader } from './transloco.loader';
+import { TranslocoModule, TRANSLOCO_CONFIG, TranslocoConfig } from '@ngneat/transloco';
 
 @NgModule({
   declarations: [AppComponent],
@@ -24,9 +27,20 @@ import { FirebaseModule } from './core/firebase';
     ProfileModule,
     TestModule,
     MainModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    HttpClientModule,
+    TranslocoModule
   ],
-  providers: [],
+  providers: [{
+      provide: TRANSLOCO_CONFIG,
+      useValue: {
+        availableLangs: ['en', 'ru'],
+        defaultLang: 'en',
+        prodMode: environment.production,
+      } as TranslocoConfig
+    },
+    translocoLoader
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

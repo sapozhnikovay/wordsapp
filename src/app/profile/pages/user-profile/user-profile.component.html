@@ -7,4 +7,4 @@
     <h4>{{ user.email }}</h4>
   </div>
 </div>
-<button mat-raised-button color="primary" (click)="auth.signOut()">LOGOUT</button>
+<button mat-raised-button color="primary" (click)="auth.signOut()">{{ 'logout' | transloco | uppercase }}</button>
